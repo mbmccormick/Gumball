@@ -40,8 +40,7 @@ namespace Gumball
                 data.AppendLine("<div class=\"photo-data-meta\">");
 
                 DateTime createdDate = DateTime.ParseExact(p.photo.created_at, "yyyy-MM-ddTHH:mm:ssZ", new System.Globalization.CultureInfo("en-US"));
-                createdDate = createdDate.AddHours(7);
-
+                
                 if (DateTime.UtcNow.Subtract(createdDate).Days == 0)
                     if (DateTime.UtcNow.Subtract(createdDate).Hours == 0) 
                         data.AppendLine("This photo was taken by <b>" + p.photo.user.user_name + "</b> just now at " + p.photo.lat + ", " + p.photo["long"] + ".");
