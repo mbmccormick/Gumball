@@ -5,6 +5,7 @@
     font-family: "Segoe UI", Helvetica, Arial, Sans-Serif;
     margin: 0px;
     padding: 0px;
+    text-shadow: rgba(0, 0, 0, 0.0078125) 0px 0px 1px;
 }
 
 a:link, a:visited, a:active
@@ -104,6 +105,8 @@ p
 {
     font-size: 20px;   
     padding-bottom: 10px;
+    font-family: Georgia;
+    font-style: italic;
 }
 
 .photo-data-meta
