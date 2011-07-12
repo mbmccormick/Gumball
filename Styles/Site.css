@@ -11,6 +11,7 @@ a:link, a:visited, a:active
 {
     color: #0DB542;
     text-decoration: none;
+    font-weight: bold;
 }
 
 a:hover
@@ -47,6 +48,11 @@ p
     border: none;
     font-size: 36px;
     font-weight: normal;
+}
+
+.header h1 a
+{
+    font-weight: normal;   
 }
 
 .header i
