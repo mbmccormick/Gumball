@@ -1,0 +1,5 @@
+c:\users\matt mccormick\documents\visual studio 2010\Projects\Gumball\Gumball\bin\Gumball.dll
+c:\users\matt mccormick\documents\visual studio 2010\Projects\Gumball\Gumball\bin\Gumball.pdb
+c:\users\matt mccormick\documents\visual studio 2010\Projects\Gumball\Gumball\obj\Debug\ResolveAssemblyReference.cache
+c:\users\matt mccormick\documents\visual studio 2010\Projects\Gumball\Gumball\obj\Debug\Gumball.dll
+c:\users\matt mccormick\documents\visual studio 2010\Projects\Gumball\Gumball\obj\Debug\Gumball.pdb

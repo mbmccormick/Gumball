@@ -1,0 +1,111 @@
+﻿body   
+{
+    background: #F2F2F2;
+    font-size: .80em;
+    font-family: "Segoe UI", Helvetica, Arial, Sans-Serif;
+    margin: 0px;
+    padding: 0px;
+}
+
+a:link, a:visited
+{
+    color: #034af3;
+}
+
+a:hover
+{
+    color: #1d60ff;
+    text-decoration: none;
+}
+
+a:active
+{
+    color: #034af3;
+}
+
+p
+{
+    margin-bottom: 10px;
+    line-height: 1.6em;
+}
+
+.page
+{
+    width: 960px;
+    background-color: #fff;
+    margin: 20px auto 0px auto;
+    border: 1px solid #D2D2D2;
+    padding: 15px;
+}
+
+.header
+{
+    position: relative;
+    margin: 0px;
+    padding: 30px 0px 60px 20px;
+    width: 100%;
+}
+
+.header h1
+{
+    margin: 0px;
+    border: none;
+    font-size: 32px;
+    font-weight: normal;
+}
+
+.header i
+{
+    font-size: 18px;
+    color: #999999;
+}
+
+.main
+{
+    padding: 0px 12px;
+    margin: 12px 8px 8px 8px;
+    min-height: 420px;
+}
+
+.footer
+{
+    color: #4e5766;
+    padding: 8px 0px 0px 0px;
+    margin: 0px auto;
+    text-align: center;
+    line-height: normal;
+}
+
+.clear
+{
+    clear: both;
+}
+
+.photo
+{
+    height: 480px;
+}
+
+.photo-image
+{
+     float: left;
+}
+
+.photo-data
+{
+    float: left;
+    padding: 20px 0px 0px 40px;
+    width: 440px;
+    max-width: 440px;
+}
+
+.photo-data-caption
+{
+    font-size: 20px;   
+    padding-bottom: 10px;
+}
+
+.photo-data-meta
+{
+    line-height: 1.5em;
+}
