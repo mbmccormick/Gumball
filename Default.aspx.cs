@@ -52,6 +52,11 @@ namespace Gumball
                     data.AppendLine("This photo was taken by <a href=\"http://gumball.apphb.com/?id=" + p.photo.user.id + "\">" + p.photo.user.user_name + "</a> about " + DateTime.UtcNow.Subtract(createdDate).Days + " day ago at " + p.photo.lat + ", " + p.photo["long"] + ".");
                 else
                     data.AppendLine("This photo was taken by <a href=\"http://gumball.apphb.com/?id=" + p.photo.user.id + "\">" + p.photo.user.user_name + "</a> about " + DateTime.UtcNow.Subtract(createdDate).Days + " days ago at " + p.photo.lat + ", " + p.photo["long"] + ".");
+
+                data.AppendLine("<br />");
+                data.AppendLine("<br />");
+                data.AppendLine("No comments yet.");
+                
                 data.AppendLine("</div>");
                 data.AppendLine("</div>");
                 data.AppendLine("</div>");
