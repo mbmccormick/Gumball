@@ -7,20 +7,15 @@
     padding: 0px;
 }
 
-a:link, a:visited
+a:link, a:visited, a:active
 {
-    color: #034af3;
+    color: #FF2E74;
+    text-decoration: none;
 }
 
 a:hover
 {
-    color: #1d60ff;
-    text-decoration: none;
-}
-
-a:active
-{
-    color: #034af3;
+    color: #FF2E74;
 }
 
 p
@@ -50,7 +45,7 @@ p
 {
     margin: 0px;
     border: none;
-    font-size: 32px;
+    font-size: 36px;
     font-weight: normal;
 }
 

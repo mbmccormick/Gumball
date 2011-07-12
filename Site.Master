@@ -13,9 +13,8 @@
     <div class="page">
         <div class="header">
             <h1>
-                Gumball</h1>
-            <i>
-                It's like bubblegum, but with more flavor!</i>
+                <a href="/">Gumball</a></h1>
+            <i>It's like bubblegum, but with more flavor!</i>
         </div>
         <div class="main">
             <asp:ContentPlaceHolder ID="MainContent" runat="server" />
