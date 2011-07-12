@@ -43,15 +43,15 @@ namespace Gumball
                 
                 if (DateTime.UtcNow.Subtract(createdDate).Days == 0)
                     if (DateTime.UtcNow.Subtract(createdDate).Hours == 0) 
-                        data.AppendLine("This photo was taken by <b>" + p.photo.user.user_name + "</b> just now at " + p.photo.lat + ", " + p.photo["long"] + ".");
+                        data.AppendLine("This photo was taken by <a href=\"http://gumball.apphub.com/?id=" + p.photo.user.id + "\">" + p.photo.user.user_name + "</a> just now at " + p.photo.lat + ", " + p.photo["long"] + ".");
                     else if (DateTime.UtcNow.Subtract(createdDate).Hours == 1)
-                        data.AppendLine("This photo was taken by <b>" + p.photo.user.user_name + "</b> about " + DateTime.UtcNow.Subtract(createdDate).Hours + " hour ago at " + p.photo.lat + ", " + p.photo["long"] + ".");
+                        data.AppendLine("This photo was taken by <a href=\"http://gumball.apphub.com/?id=" + p.photo.user.id + "\">" + p.photo.user.user_name + "</a> about " + DateTime.UtcNow.Subtract(createdDate).Hours + " hour ago at " + p.photo.lat + ", " + p.photo["long"] + ".");
                     else
-                        data.AppendLine("This photo was taken by <b>" + p.photo.user.user_name + "</b> about " + DateTime.UtcNow.Subtract(createdDate).Hours + " hours ago at " + p.photo.lat + ", " + p.photo["long"] + ".");
+                        data.AppendLine("This photo was taken by <a href=\"http://gumball.apphub.com/?id=" + p.photo.user.id + "\">" + p.photo.user.user_name + "</a> about " + DateTime.UtcNow.Subtract(createdDate).Hours + " hours ago at " + p.photo.lat + ", " + p.photo["long"] + ".");
                 else if (DateTime.UtcNow.Subtract(createdDate).Days == 1)
-                    data.AppendLine("This photo was taken by <b>" + p.photo.user.user_name + "</b> about " + DateTime.UtcNow.Subtract(createdDate).Days + " day ago at " + p.photo.lat + ", " + p.photo["long"] + ".");
+                    data.AppendLine("This photo was taken by <a href=\"http://gumball.apphub.com/?id=" + p.photo.user.id + "\">" + p.photo.user.user_name + "</a> about " + DateTime.UtcNow.Subtract(createdDate).Days + " day ago at " + p.photo.lat + ", " + p.photo["long"] + ".");
                 else
-                    data.AppendLine("This photo was taken by <b>" + p.photo.user.user_name + "</b> about " + DateTime.UtcNow.Subtract(createdDate).Days + " days ago at " + p.photo.lat + ", " + p.photo["long"] + ".");
+                    data.AppendLine("This photo was taken by <a href=\"http://gumball.apphub.com/?id=" + p.photo.user.id + "\">" + p.photo.user.user_name + "</a> about " + DateTime.UtcNow.Subtract(createdDate).Days + " days ago at " + p.photo.lat + ", " + p.photo["long"] + ".");
                 data.AppendLine("</div>");
                 data.AppendLine("</div>");
                 data.AppendLine("</div>");
