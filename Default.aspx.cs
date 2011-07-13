@@ -52,12 +52,12 @@ namespace Gumball
                         state = t.short_name;
                 }
 
-                var location = city + ", " + state;
+                var location = "<a href=\"http://www.bing.com/maps/default.aspx?lvl=12&cp=" + p.photo.lat + "~" + p.photo["long"] + "\" target=\"blank\">" + city + ", " + state + "</a>";
                 
                 DateTime createdDate = DateTime.ParseExact(p.photo.created_at, "yyyy-MM-ddTHH:mm:ssZ", new System.Globalization.CultureInfo("en-US"));
                 
                 if (DateTime.UtcNow.Subtract(createdDate).Days == 0)
-                    if (DateTime.UtcNow.Subtract(createdDate).Hours == 0) 
+                    if (DateTime.UtcNow.Subtract(createdDate).Hours == 0)
                         data.AppendLine("This photo was taken by <a href=\"http://gumball.apphb.com/?id=" + p.photo.user.id + "\">" + p.photo.user.user_name + "</a> just now in " + location + ".");
                     else if (DateTime.UtcNow.Subtract(createdDate).Hours == 1)
                         data.AppendLine("This photo was taken by <a href=\"http://gumball.apphb.com/?id=" + p.photo.user.id + "\">" + p.photo.user.user_name + "</a> about " + DateTime.UtcNow.Subtract(createdDate).Hours + " hour ago in " + location + ".");
