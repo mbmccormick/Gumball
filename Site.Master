@@ -3,7 +3,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head runat="server">
-    <title>Gumball</title>
+    <title>Gumball.me</title>
     <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
     <asp:ContentPlaceHolder ID="HeadContent" runat="server">
     </asp:ContentPlaceHolder>
@@ -13,7 +13,7 @@
     <div class="page">
         <div class="header">
             <h1>
-                <a href="/">Gumball</a></h1>
+                <a href="/">Gumball.me</a></h1>
             <i>It's like bubblegum, but with more flavor!</i>
         </div>
         <div class="main">
