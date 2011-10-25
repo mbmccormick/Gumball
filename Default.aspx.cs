@@ -39,34 +39,42 @@ namespace Gumball
                 data.AppendLine("</div>");
                 data.AppendLine("<div class=\"photo-data-meta\">");
 
-                var jsonResult2 = client.DownloadString("http://maps.googleapis.com/maps/api/geocode/json?address=" + p.photo.lat + "," + p.photo["long"] + "&sensor=false");
-                var r = Json.Decode(jsonResult2).results[0];
-
-                string city = "";
-                string state = "";
-                foreach (var t in r.address_components)
+                string location;
+                try
                 {
-                    if (t.types[0] == "locality")
-                        city = t.long_name;
-                    else if (t.types[0] == "administrative_area_level_1")
-                        state = t.short_name;
+                    var jsonResult2 = client.DownloadString("http://maps.googleapis.com/maps/api/geocode/json?address=" + p.photo.lat + "," + p.photo["long"] + "&sensor=false");
+                    var r = Json.Decode(jsonResult2).results[0];
+
+                    string city = "";
+                    string state = "";
+                    foreach (var t in r.address_components)
+                    {
+                        if (t.types[0] == "locality")
+                            city = t.long_name;
+                        else if (t.types[0] == "administrative_area_level_1")
+                            state = t.short_name;
+                    }
+
+                    location = "<a href=\"http://www.bing.com/maps/default.aspx?lvl=12&cp=" + p.photo.lat + "~" + p.photo["long"] + "\" target=\"blank\">" + city + ", " + state + "</a>";
+                }
+                catch
+                {
+                    location = "<a href=\"http://www.bing.com/maps/default.aspx?lvl=12&cp=" + p.photo.lat + "~" + p.photo["long"] + "\" target=\"blank\">(" + p.photo.lat + ", " + p.photo["long"] + ")</a>";
                 }
 
-                var location = "<a href=\"http://www.bing.com/maps/default.aspx?lvl=12&cp=" + p.photo.lat + "~" + p.photo["long"] + "\" target=\"blank\">" + city + ", " + state + "</a>";
-                
                 DateTime createdDate = DateTime.ParseExact(p.photo.created_at, "yyyy-MM-ddTHH:mm:ssZ", new System.Globalization.CultureInfo("en-US"));
                 
                 if (DateTime.UtcNow.Subtract(createdDate).Days == 0)
                     if (DateTime.UtcNow.Subtract(createdDate).Hours == 0)
-                        data.AppendLine("This photo was taken by <a href=\"http://gumball.apphb.com/?id=" + p.photo.user.id + "\">" + p.photo.user.user_name + "</a> just now in " + location + ".");
+                        data.AppendLine("This photo was taken by <a href=\"/?id=" + p.photo.user.id + "\">" + p.photo.user.user_name + "</a> just now in " + location + ".");
                     else if (DateTime.UtcNow.Subtract(createdDate).Hours == 1)
-                        data.AppendLine("This photo was taken by <a href=\"http://gumball.apphb.com/?id=" + p.photo.user.id + "\">" + p.photo.user.user_name + "</a> about " + DateTime.UtcNow.Subtract(createdDate).Hours + " hour ago in " + location + ".");
+                        data.AppendLine("This photo was taken by <a href=\"/?id=" + p.photo.user.id + "\">" + p.photo.user.user_name + "</a> about " + DateTime.UtcNow.Subtract(createdDate).Hours + " hour ago in " + location + ".");
                     else
-                        data.AppendLine("This photo was taken by <a href=\"http://gumball.apphb.com/?id=" + p.photo.user.id + "\">" + p.photo.user.user_name + "</a> about " + DateTime.UtcNow.Subtract(createdDate).Hours + " hours ago in " + location + ".");
+                        data.AppendLine("This photo was taken by <a href=\"/?id=" + p.photo.user.id + "\">" + p.photo.user.user_name + "</a> about " + DateTime.UtcNow.Subtract(createdDate).Hours + " hours ago in " + location + ".");
                 else if (DateTime.UtcNow.Subtract(createdDate).Days == 1)
-                    data.AppendLine("This photo was taken by <a href=\"http://gumball.apphb.com/?id=" + p.photo.user.id + "\">" + p.photo.user.user_name + "</a> about " + DateTime.UtcNow.Subtract(createdDate).Days + " day ago in " + location + ".");
+                    data.AppendLine("This photo was taken by <a href=\"/?id=" + p.photo.user.id + "\">" + p.photo.user.user_name + "</a> about " + DateTime.UtcNow.Subtract(createdDate).Days + " day ago in " + location + ".");
                 else
-                    data.AppendLine("This photo was taken by <a href=\"http://gumball.apphb.com/?id=" + p.photo.user.id + "\">" + p.photo.user.user_name + "</a> about " + DateTime.UtcNow.Subtract(createdDate).Days + " days ago in " + location + ".");
+                    data.AppendLine("This photo was taken by <a href=\"/?id=" + p.photo.user.id + "\">" + p.photo.user.user_name + "</a> about " + DateTime.UtcNow.Subtract(createdDate).Days + " days ago in " + location + ".");
 
                 data.AppendLine("<br />");
                 data.AppendLine("<br />");
